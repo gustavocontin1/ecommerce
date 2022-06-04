@@ -15,9 +15,69 @@ html, body, #root {
 
 header{
     background-color: rgb(51,51,51);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 h1{
     color: white;
+    margin: 0.5rem 0 1rem 0;
+}
+.nav{
+    color: white;
+    width: 350px;
+    height: 60px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #1d1d1d;
+    padding: 0 0.4rem;
+    color: #fff;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 10px #202020;
+    
 }
 
+.nav::before{
+    content: "";
+    text-decoration: none;
+    position: absolute;
+    top: 5%;
+    left: -2.5%;
+    width: 105%;
+    height: 112%;
+    border-radius: 20px;
+    background: linear-gradient(to right, #272727, #2a2a2a);
+    z-index: -1;
+    transition: background 4s;
+    text-decoration: none;
+}
+
+.nav:hover::before{
+    
+    background: linear-gradient(to right, #990100, #B90504);
+}
+
+.box{
+    color: white;
+    width: 25%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.box:hover{
+    color: white;
+    text-decoration: none;
+    transform: translateY(-10px);
+    background: linear-gradient(to right, #990100, #B90504);
+}

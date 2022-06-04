@@ -1,13 +1,12 @@
 import Navbar from './components/Navbar'
-import Main from './components/Main'
+import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
-
 
 const App = () => {
     return (
         <>
         <Navbar/>
-        <Main/>
+        <ItemListContainer mensaje='Productos'/>
         <Footer/>
         </>
     )
