@@ -4,13 +4,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const [contador, setContador] = useState(initial)
 
     const aumentarContador = () => {
-        if(contador>=0 && contador<5){
+        if(contador<stock){
             setContador(contador + 1)
     }
     }
 
     const disminuirContador = () => {
-        if(contador<=5 && contador>0){
+        if(contador>initial){
             setContador(contador - 1)
     }
 }
