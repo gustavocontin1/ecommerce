@@ -1,11 +1,9 @@
-import ItemCount from "./ItemCount"
 function Item({id, name, price, image}) {
 return (
-    <div className="tarjeta">
-        <h3>{name}</h3>
+    <div className="producto">
+        <h3 className="titulo-producto">{name}</h3>
         <img className="img" src={image} alt={name}/>
-        <p>${price}</p>
-        <ItemCount initial={1} stock={5} onAdd={() => {}}/>
+        <p className="precio-producto">AR$ {price}</p>
     </div>
 )
 }

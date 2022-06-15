@@ -21,6 +21,9 @@ header{
     align-items: center;
     
 }
+body{
+    background-color: #990100;
+}
 
 h1{
     color: white;
@@ -37,6 +40,7 @@ h1{
     align-items: center;
     background: #1d1d1d;
     padding: 0 0.4rem;
+    margin-bottom: 1rem;
     color: #fff;
     border-radius: 20px;
     position: relative;
@@ -69,13 +73,124 @@ h1{
     transition: transform 0.4s;
 }
 
+
 .img{
     width: 240px;
     height: 240px;
+    border-radius: 10px;
 }
 
 .list-container{
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
-    align-content: space-between;
+    justify-content: space-evenly;
+}
+
+.producto{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 1rem 1rem 1.5rem;
+    background-color: rgb(51,51,51);
+    border-radius: 10px;
+    transition: transform 0.4s;
+}
+.producto:hover{
+    transform: scale(1.1);
+    transition: transform 0.4s;
+    box-shadow: 10px 5px 5px #B90504;
+    cursor: pointer;
+}
+.titulo-producto{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: .5rem;
+    text-align: center;
+}
+.mensaje{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 1rem;
+    font-size: 3rem;
+}
+
+.precio-producto{
+    margin: .5rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.contador-producto{
+    margin: 0 .5rem 1rem .5rem;
+    color: white;
+    width: 95%;
+}
+
+.btn{
+    margin:.3rem;
+}
+.detail-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.producto-detail{
+    width: 80%;
+    margin: 1rem;
+    background-color: rgb(51,51,51);
+    border-radius: 10px;
+    transition: transform 0.4s;
+}
+.img-detail{
+    width: 43%;
+    height: 60%;
+    margin: 1rem;
+    float: left;
+    border-radius: 10px;
+}
+.container-descripcion{
+    float: right;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.descripcion-producto{
+    color: white;
+    background-color: rgb(28, 28, 28);
+    border-radius: 10px;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 1rem 0 1rem;
+    padding: .5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.precio-detail{
+    color: white;
+    font-size: 2.4rem;
+    text-align: center;
+    margin: 1rem;
+}
+
+.cantidad{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.btn-confirmar{
+    width: 70%;
 }
