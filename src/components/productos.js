@@ -82,19 +82,10 @@ const productos= [
     }
 ]
 
-
-const producto = {
-    id:1,
-    name:'BOTINES DE FUTBOL PUMA FUTURE',
-    price:20000,
-    descripcion:'Juega como un auténtico profesional con este modelo elegante a la par que ágil con un diseño sin cordones para mayor comodidad, la marca PUMA destacada y modernas combinaciones de color que destacan con estilo.',
-    image: botinesFuture
-}
-
-export const traerProducto = () => {
+export const traerProducto = (id) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(producto);
+            resolve(productos.find(prod => prod.id === id));
         }, 2000)
     })
 }

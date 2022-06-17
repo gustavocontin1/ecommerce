@@ -4,13 +4,23 @@ const Header = () =>{
         <header className='contenedor'>
             <h1>Depor T</h1>
             <nav className='nav'>
-                <a className='box' href='#'>Incio<span className="material-symbols-outlined">
+                <a className='box' href='#'>INICIO<span className="material-symbols-outlined">
                 home
                 </span></a>
-                <a className='box' href='#'>Productos<span className="material-symbols-outlined">
-                category
-                </span></a>
-                <a className='box' href='#'>Contacto<span className="material-symbols-outlined">
+                <li className="alinear-dropdown nav-item dropdown">
+                    <a className="box nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                    PRODUCTOS<span className="material-symbols-outlined">
+                    category
+                    </span>
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a className="dropdown-item" href="#">CAMISETAS</a>
+                        <a className="dropdown-item" href="#">PELOTAS</a>
+                        <a className="dropdown-item" href="#">BOTINES</a>
+                        <a className="dropdown-item" href="#">OTROS</a>
+                    </div>
+                </li>
+                <a className='box' href='#'>CONTACTO<span className="material-symbols-outlined">
                 mail
                 </span></a> 
                 <Carrito/>
