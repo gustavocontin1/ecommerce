@@ -1,26 +1,26 @@
 import Carrito from './CartWidget'
+import { Link } from 'react-router-dom'
+
 const Header = () =>{
     return (
         <header className='contenedor'>
-            <h1>Depor T</h1>
+            <h1 ><Link to='/' className='titulo' >Depor T</Link></h1>
             <nav className='nav'>
-                <a className='box' href='#'>INICIO<span className="material-symbols-outlined">
+                <Link to='/' className='box'>INICIO<span className="material-symbols-outlined">
                 home
-                </span></a>
+                </span></Link>
                 <li className="alinear-dropdown nav-item dropdown">
-                    <a className="box nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                    PRODUCTOS<span className="material-symbols-outlined">
-                    category
-                    </span>
-                    </a>
+                    <Link to='/' className="box nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                    PRODUCTOS<span className="material-symbols-outlined">category</span>
+                    </Link>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a className="dropdown-item" href="#">CAMISETAS</a>
-                        <a className="dropdown-item" href="#">PELOTAS</a>
-                        <a className="dropdown-item" href="#">BOTINES</a>
-                        <a className="dropdown-item" href="#">OTROS</a>
+                        <Link to='category/camisetas' className="dropdown-item">CAMISETAS</Link>
+                        <Link to='category/pelotas' className="dropdown-item" >PELOTAS</Link>
+                        <Link to='category/botines' className="dropdown-item" >BOTINES</Link>
+                        <Link to='category/otros' className="dropdown-item">OTROS</Link>
                     </div>
                 </li>
-                <a className='box' href='#'>CONTACTO<span className="material-symbols-outlined">
+                <a className='box'>CONTACTO<span className="material-symbols-outlined">
                 mail
                 </span></a> 
                 <Carrito/>

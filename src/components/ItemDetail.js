@@ -3,7 +3,7 @@ import ItemCount from './ItemCount'
 const ItemDetail = ({item}) => {
     return (
     <div className="producto-detail">
-        <h3 className="titulo-producto">{item.name}</h3>
+        <h3 className="titulo-detail">{item.name}</h3>
         <img className="img-detail" src={item.image} alt={item.name}/>
         <div className='container-descripcion'>
             <h4 className='descripcion-producto'>{item.descripcion}</h4>
