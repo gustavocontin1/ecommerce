@@ -15,7 +15,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 }
     const confirmarCompra = () => {
+        onAdd(contador)
     }
+
     return (
     <div className="contador-producto">
         <p className="cantidad">Agregar: {contador}</p>
