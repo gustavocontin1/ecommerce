@@ -1,34 +1,48 @@
-import { createContext, useState } from "react"
-export const contexto = createContext()
-const Provider = contexto.Provider
+import { createContext, useContext, useState } from "react"
+const CartContext = createContext()
+export const useCartContext = () => useContext(CartContext)
 
-const CartContext = ({children}) => {
+const CartContexto = ({children}) => {
     const [cart, setCart] = useState([])
-
-    const isInCart = (id) => {
-        return cart.find(prod => prod.id == id)
-    }
+    
+    const isInCart = (id) => cart.find(prod => prod.id == id)
 
     const addToCart = (item, quantity) => {
         if (isInCart == true) {
             setCart(cart.map(prod => {
-            if (item == id) { 
-                let nuevaCantidad = prod.cantidad + quantity
+            if (item.id === prod.id) { 
+                let nuevaCantidad = prod.quantity + quantity
                 return {...prod, quantity: nuevaCantidad}
     }else {
 		return {...prod, quantity: quantity} }
     }))}}
-    
+
+    const totalPrice = () => {
+        let total = 0 
+        cart.forEach(item => total += item.quantity * item.price)
+        return total
+    }
+
+    const removeProduct = (id) => setCart(cart.filter(prod => prod.id != id)) 
+
+    const clear = () => {
+        setCart([])
+    }
+
     const valorProvider = {
+        cart: cart,
         isInCart: isInCart,
-        addToCart: addToCart
+        addToCart: addToCart, 
+        totalPrice: totalPrice,
+        removeProduct: removeProduct,
+        clear: clear
     }
 
 return (
-    <Provider value={valorProvider}>
+    <CartContext.Provider value={valorProvider}>
         {children}
-    </Provider>
+    </CartContext.Provider>
 )
 }
 
-export default CartContext
+export default CartContexto
