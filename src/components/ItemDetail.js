@@ -8,7 +8,7 @@ const ItemDetail = ({item}) => {
     const { addToCart } = useCartContext()
 
     const onAdd = (quantity) => {
-        addToCart(item, quantity)
+        addToCart({item, quantity })
         setActivo(false)
     }
 
