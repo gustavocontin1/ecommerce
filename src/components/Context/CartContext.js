@@ -8,14 +8,27 @@ const CartContexto = ({children}) => {
     const isInCart = (id) => cart.find(prod => prod.id === id)
 
     const addToCart = (item, quantity) => {
-        if (isInCart === true) {
-            setCart(cart.map(prod => {
-            if (item.id === prod.id) { 
-                let nuevaCantidad = prod.quantity + quantity
-                return {...prod, quantity: nuevaCantidad}
-    }else {
-		return {...prod, quantity: quantity} }
-    }))}}
+        if (isInCart(item.id)) {
+            sumarCantidad(item, quantity)
+        } else {
+            setCart([...cart, { ...item, quantity }])
+        }
+    }
+
+    const sumarCantidad = (item, quantity) => {
+        const newProducts = cart.map((prod) => {
+            if (prod.id === item.id) {
+                const newProduct = {
+                    ...prod,
+                    quantity: prod.quantity + quantity,
+                }
+                return newProduct
+            } else {
+                return prod
+            }
+        })
+        setCart(newProducts)
+    }
 
     const totalPrice = () => {
         let total = 0 

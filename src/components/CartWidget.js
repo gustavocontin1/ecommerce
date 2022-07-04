@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import { useCartContext } from "./Context/CartContext"
 
 const CartWidget = () => {
-    const { quantity} = useCartContext(0)
+    const { quantity} = useCartContext()
 return (
     <NavLink to={`/cart`} className="box" href="#">
     CARRITO<span className="material-symbols-outlined">

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { useCartContext } from './Context/CartContext'
 
 const Cart = () => {
@@ -7,49 +6,37 @@ const Cart = () => {
 
   console.log(quantity)
 
-  /*cart.map((productos) => { 
-  return (
-    <div key={productos.id}>
-      <h1>Tu Carrito</h1>
-      <img src={productos.image}/>
-      <p>{productos.name}</p>
-      <h3>Total: {totalPrice}</h3>
-      <button onClick={eliminarProducto}>Eliminar producto</button>
-      <button onClick={clear}>Vaciar Carrito</button>
-    </div>
-  )}
-  )
-
 return (
-  <div>
-  {cart.map((prod) =>{
-    <div key={prod.id}>
-      <h1>Tu Carrito</h1>
-      <img src={prod.image}/>
-      <p>{prod.name}</p>
-      <h3>Total: {totalPrice}</h3>
-      <button onClick={eliminarProducto}>Eliminar producto</button>
-      <button onClick={clear}>Vaciar Carrito</button>
-    </div>
-  })
-}</div>)*/
-
-{if(quantity === 0) 
-  {return (
-    <div>
-        <p>No hay productos agregados aun. </p>
-        <Link to="/" >Podes ir acá para empezar tu compra.</Link>
-    </div>
-)} else {cart.map(prod =>
-  <div key={prod.id}>
-    <h1>Tu Carrito</h1>
-    <img src={prod.image}/>
-    <p>{prod.name}</p>
-    <h3>Total: {totalPrice}</h3>
-    <button onClick={removeProduct}>Eliminar producto</button>
-    <button onClick={clear}>Vaciar Carrito</button>
-  </div>)}
-}
-}
+  <>
+      {cart.length === 0 ? (
+          <div className="empty">Tu carrito está vacio.</div>
+      ) : (
+          <>
+              <div className="cart">
+                  {cart.map((prod) => (
+                      <div className="infoCart" key={prod.id}>
+                          <img className='img-cart'
+                              src={prod.image}
+                              alt={prod.name}
+                          />
+                          <div className='cart2'>
+                            <h2 className='titulo-cart'>{prod.name}</h2>
+                            <h2>${prod.price}</h2>
+                            <h2>Cantidad: {prod.quantity}</h2>
+                            <button className='btn btn-danger' onClick={() => removeProduct(prod.id)}>
+                                Eliminar
+                            </button>
+                          </div>
+                      </div>
+                  ))}
+                  <div className="cartBtn">
+                      <h2>Total: ${totalPrice}</h2>
+                      <button className='btn btn-danger' onClick={clear}>Vaciar carrito</button>
+                  </div>
+              </div>
+              </>
+                  )}
+                  </>
+)}
 
 export default Cart
