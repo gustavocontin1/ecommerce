@@ -10,7 +10,7 @@ const ItemListContainer = ({greeting}) => {
     const {categoryId}= useParams()
 
     useEffect(() => {
-    const ref = categoryId ? query(collectionProductos, where('category', '==', categoryId)) : collectionProductos
+    const ref = categoryId ? query(collectionProductos, where('categoryId', '==', categoryId)) : collectionProductos
 
     getDocs(ref).then((resultado) =>{
         const products = resultado.docs.map((doc)=>{
@@ -25,8 +25,8 @@ const ItemListContainer = ({greeting}) => {
     })
     .catch((error) => {
         console.log(error)
-    }, [categoryId]) 
-})
+    })
+},[categoryId] )
 
 return (
     <main>

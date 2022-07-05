@@ -6,7 +6,6 @@ import CartContexto from './components/Context/CartContext'
 import Footer from './components/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CartWidget from './components/CartWidget'
-import { db } from './components/firebase'
 
 const App = () => {
     return (
