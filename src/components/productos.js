@@ -1,4 +1,4 @@
-import botinesFuture from './assets/img1/botines-future.jpg'
+/*import botinesFuture from './assets/img1/botines-future.jpg'
 import botinesStrike from './assets/img1/botines-strike.jpg'
 import camisetaBoca from './assets/img1/camiseta-boca.jpg'
 import camisetaRiver from './assets/img1/camiseta-river.jpg'
@@ -107,4 +107,4 @@ export const productosCategorias = (time, categoryId) => {
     })
 }
 
-export default productos
+export default productos*/

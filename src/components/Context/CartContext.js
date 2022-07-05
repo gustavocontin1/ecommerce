@@ -1,3 +1,4 @@
+import { connectFirestoreEmulator } from "firebase/firestore"
 import { createContext, useContext, useState } from "react"
 const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
@@ -31,10 +32,12 @@ const CartContexto = ({children}) => {
     }
 
     const totalPrice = () => {
-        let total = 0 
-        cart.forEach(item => total += item.quantity * item.price)
+        let total = 0
+        cart.forEach(cart => {
+             total += cart.quantity * cart.price
+        })
         return total
-    }
+}
 
     const removeProduct = (id) => setCart(cart.filter(prod => prod.id !== id)) 
 
