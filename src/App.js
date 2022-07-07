@@ -6,6 +6,7 @@ import CartContexto from './components/Context/CartContext'
 import Footer from './components/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CartWidget from './components/CartWidget'
+import Checkout from './components/Checkout'
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
                 <Route path='/cart' element={<Cart/>} />
                 <Route path='/cart' element={<CartWidget/>} />
                 <Route path='/category/:categoryId' element={<ItemListContainer greeting='Productos'/>} />
+                <Route path='/checkout' element={<Checkout/>} />
             </Routes>
         </CartContexto>
         </BrowserRouter>

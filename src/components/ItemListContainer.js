@@ -1,7 +1,7 @@
 import ItemList from "./ItemList"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { collectionProductos} from "./firebase"
+import { collectionProductos} from "./Firebase/firebase"
 import { getDocs, query, where} from "firebase/firestore"
 
 const ItemListContainer = ({greeting}) => {
@@ -21,7 +21,6 @@ const ItemListContainer = ({greeting}) => {
     })
     setItems(products)
     setLoading(false)
-    console.log(collectionProductos)
     })
     .catch((error) => {
         console.log(error)
