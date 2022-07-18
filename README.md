@@ -19,12 +19,15 @@ Ver [Video](https://youtu.be/Q5Qq4LNLa7Q).
 
 ### Seguir los siguientes pasos:
 
-* Clonar el repositorio de GitHub
+* Clonar el repositorio de GitHub:
+
 git clone https://github.com/gustavocontin1/ecommerce
 
 * Cd dentro del directorio de la carpeta y tipear:
+
 npm install
 
-* Para correr el proyecto
+* Para correr el proyecto:
+
 npm start
 
