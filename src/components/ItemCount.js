@@ -15,11 +15,11 @@ const ItemCount = ({stock, initial, onAdd}) => {
     return (
     <div className="contador-producto">
         <p className="cantidad">Agregar: {contador}</p>
-        <button onClick={disminuirContador}type="button" className="btn btn-danger"><span className="material-symbols-outlined">
+        <button onClick={disminuirContador}type="button" className="btn btn-outline-danger"><span className="material-symbols-outlined">
         do_not_disturb_on
         </span></button>  
-        <button onClick={confirmarCompra} type="button" className="btn-confirmar btn btn-outline-danger">Agregar al Carrito</button>
-        <button onClick={aumentarContador} type="button" className="btn btn-danger"> <span className="material-symbols-outlined">
+        <button onClick={confirmarCompra} type="button" className="btn-confirmar btn btn-danger">Agregar al Carrito</button>
+        <button onClick={aumentarContador} type="button" className="btn btn-outline-danger"> <span className="material-symbols-outlined">
         add_circle
         </span></button>
     </div>

@@ -20,7 +20,7 @@ const ItemDetail = ({item}) => {
             <h4 className='descripcion-producto'>{item.descripcion}</h4>
             <p className="precio-detail">AR$ {item.price}</p>
             {activo ? <ItemCount initial={1} stock={5} onAdd={onAdd}/> :
-            <Link to={`/cart`} className="btn-confirmar btn btn-outline-danger">Terminar compra</Link>}
+            <Link to={`/cart`} className="btn-confirmar btn btn-danger">Terminar compra</Link>}
         </div>
     </div>
 )

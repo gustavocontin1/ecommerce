@@ -1,5 +1,6 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useCartContext } from './Context/CartContext'
 import { db } from './Firebase/firebase'
 
@@ -42,38 +43,49 @@ const Checkout = () => {
 
     if(orders !== '') {
         return(
-        <h1>Gracias por tu compra! Tu numero de pedido es: {orders}</h1>
+        <div className='finalizar-compra'>
+            <div className='cuadro-checkout'>
+                <span className="simbolo-checkout material-symbols-outlined">check_circle</span>
+                <h2>¡Gracias por tu compra!</h2> 
+                <h5 className='orden-checkout'>Tu número de orden es: {orders}</h5>
+                <Link to='/' className='btn btn-danger'>Volver al Inicio</Link>
+            </div>
+        </div>
     )}
 
 return (
     <>
     {cart.length === 0 ? (
-        <div className="empty">Tu carrito está vacio.</div>
+        <div className="empty">Tu carrito está vacío.</div>
         ) : (
-    <div>
-        <div>
-            <h1>Termina tu compra!</h1>
-            <h4>Rellena el formulario para finalizar.</h4>
+    <div className='form'>
+        <div className='box-form'>
+            <div className='titulo-formulario'>
+                <h1>Finaliza tu compra!</h1>
+                <h4>Completa con tus datos el siguiente formulario.</h4>
+            </div>
+            <form className='formulario-relleno' onSubmit={handleSubmit} onChange={handleChange} data={data}>
+                <ul>
+                    <li className='li-checkout'>
+                        <label className='label'>Nombre:</label>
+                        <input className='input' type="text" name="name" placeholder='Nombre' onChange={handleChange} value={data.name} required/>
+                    </li>
+                    <li className='li-checkout'>
+                        <label className='label'>E-mail:</label>
+                        <input className='input' type="email" name="email" placeholder='E-mail' onChange={handleChange} value={data.email} required/>
+                    </li>
+                    <li className='li-checkout'>
+                        <label className='label'>Teléfono:</label>
+                        <input className='input' type="number" name="phone" placeholder='Teléfono' onChange={handleChange} value={data.phone} required/>
+                    </li>
+                    <div className='alineacion-btn'>
+                        <button className='btn btn-danger' disabled={data.name === "" || data.email === "" || data.phone === ""} onSubmit={handleSubmit}>Finalizar Compra</button>
+                        <Link to='/' className='btn checkout-inicio btn-outline-danger'> Volver al Inicio</Link>
+                    </div>
+                </ul>
+            </form>
         </div>
-        <form onSubmit={handleSubmit} onChange={handleChange} data={data}>
-        <ul>
-            <li>
-                <label>Nombre:</label>
-                <input type="text" name="name" placeholder='nombre' onChange={handleChange} value={data.name} required/>
-            </li>
-            <li>
-                <label>E-mail:</label>
-                <input type="email" name="email" placeholder='e-mail' onChange={handleChange} value={data.email} required/>
-            </li>
-            <li>
-                <label>Teléfono:</label>
-                <input type="number" name="phone" placeholder='teléfono' onChange={handleChange} value={data.phone} required/>
-            </li>
-
-            <button className='btn btn-danger' disabled={data.name === "" || data.email === "" || data.phone === ""} onSubmit={handleSubmit} >Finalizar Compra</button>
-        </ul>
-    </form>
-</div>
+    </div>
 )} 
 </>
 )}

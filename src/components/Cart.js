@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from './Context/CartContext'
 
@@ -8,7 +7,7 @@ const {cart, totalPrice, removeProduct, clear } = useCartContext()
 return (
 <>
 {cart.length === 0 ? (
-<div className="empty">Tu carrito está vacio.</div>
+<div className="empty">Tu carrito está vacío.</div>
 ) : (
     <>
         <div className="cart">
@@ -28,7 +27,7 @@ return (
                     </div>
                 </div>
             ))}
-            <div>
+            <div className='precioTotal-cart'>
                 <h2>Total: ${totalPrice()}</h2>
                 <button className='btn btn-danger' onClick={clear}>Vaciar carrito</button>
                 <Link to='/checkout' className='btn btn-danger'>Continuar Compra</Link>

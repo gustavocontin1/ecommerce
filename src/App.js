@@ -23,8 +23,9 @@ const App = () => {
                 <Route path='/checkout' element={<Checkout/>} />
             </Routes>
         </CartContexto>
-        </BrowserRouter>
         <Footer/>
+        </BrowserRouter>
+        
         </>
     )
 }

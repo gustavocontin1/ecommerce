@@ -6,7 +6,7 @@ const CartWidget = () => {
 
 return (
     <NavLink to={`/cart`} className="box" href="#">
-    CARRITO<span className="material-symbols-outlined">
+    <span className="material-symbols-outlined">
     shopping_cart
     </span>{cart.length}
     </NavLink> 
